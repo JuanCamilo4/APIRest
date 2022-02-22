@@ -23,12 +23,44 @@ router.get('/persona', (req, res) => {
         .catch((err) => {res.json({message: err})});
 });
 
-//Ruta obtener Personas en especifico
+//Ruta obtener Personas en especifico por id
 router.get('/persona/:id', (req, res) => {
     const { id } = req.params;
     personaSchema
         .findById(id)
         .then((data) => {res.json(data)})
+        .catch((err) => {res.json({message: err})});
+});
+
+//Ruta personas sexo masculino
+router.get('/personaMasculino', (req, res) => {
+    personaSchema
+        .find()
+        .then((data) => {
+            let personas = [];
+            data.forEach((persona) => {
+                if (persona.sexo == 'masculino') {
+                    personas.push(persona);
+                }
+            })
+            res.json(personas);
+        })
+        .catch((err) => {res.json({message: err})});
+});
+
+//Ruta personas sexo femenino
+router.get('/personaFemenino', (req, res) => {
+    personaSchema
+        .find()
+        .then((data) => {
+            let personas = [];
+            data.forEach((persona) => {
+                if (persona.sexo == 'femenino') {
+                    personas.push(persona);
+                }
+            })
+            res.json(personas);
+        })
         .catch((err) => {res.json({message: err})});
 });
 
