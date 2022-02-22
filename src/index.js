@@ -8,6 +8,7 @@ const app = express();
 const port = process.env.PORT | 9000;
 
 //middlewars
+app.use(express.json());
 app.use('/api', personaRoutes);
 
 //routes

@@ -1,0 +1,32 @@
+//Este archivo solo es para pruebas de la API
+//Usando El httpClient en VSCode
+
+###
+POST http://localhost:9000/api/persona HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Julie",
+    "fecha_nacimiento": "05/04/2001",
+    "sexo": "Femenino"
+}
+
+###
+GET http://localhost:9000/api/persona HTTP/1.1
+
+###
+GET http://localhost:9000/api/persona/6214524592953c12663f846f HTTP/1.1
+
+###
+PUT http://localhost:9000/api/persona/6214524592953c12663f846f HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Julie",
+    "fecha_nacimiento": "04/04/2001",
+    "sexo": "Femenino"
+}
+
+###
+DELETE http://localhost:9000/api/persona/6214524592953c12663f846f HTTP/1.1
+
