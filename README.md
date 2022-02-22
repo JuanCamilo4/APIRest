@@ -14,3 +14,7 @@ La base de datos utilizada es Mongo Atlas
 
 Para realizar las pruebas puede usar `Postman` o el `httpClient` de VSCode.
 En el caso de usar la segunda opción, solo abra el request.http
+
+## Instalar modulos
+
+Para instalar los modulos respectivos para el funcionamiento correcto de la aplicación use `npm install`.
