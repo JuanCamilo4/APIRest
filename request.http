@@ -2,17 +2,18 @@
 //Usando El httpClient en VSCode
 
 ###
-POST http://localhost:9000/api/persona HTTP/1.1
+POST http://localhost:9000/api/ingreso HTTP/1.1
 Content-Type: application/json
 
 {
-    "nombre": "Edgar",
-    "fecha_nacimiento": "05/04/2001",
-    "sexo": "masculino"
+    "typePay": "ingreso",
+    "quantity": 20000,
+    "category": "comida",
+    "date": "22/05/2005"
 }
 
 ###
-GET http://localhost:9000/api/persona HTTP/1.1
+GET http://localhost:9000/api/ingreso HTTP/1.1
 
 ###
 GET http://localhost:9000/api/personaMasculino HTTP/1.1
@@ -24,7 +25,7 @@ GET http://localhost:9000/api/personaFemenino HTTP/1.1
 GET http://localhost:9000/api/persona/6214524592953c12663f846f HTTP/1.1
 
 ###
-PUT http://localhost:9000/api/persona/621525fd16e287433dff0afb HTTP/1.1
+PUT http://localhost:9000/api/ingreso/622d5d12bb39a957cb8bc550 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -34,5 +35,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:9000/api/persona/62151ce75dc50859e6baf4c7 HTTP/1.1
+DELETE http://localhost:9000/api/ingreso/622e54d422a18e0d34b58d56 HTTP/1.1
 

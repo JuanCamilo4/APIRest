@@ -1,15 +1,27 @@
 const express = require('express');
 const { default: mongoose } = require('mongoose');
+const bodyParser = require('body-parser')
 const personaRoutes = require("./routes/persona");
+const ingresoRoutes = require("./routes/ingreso.route.js");
+const cors = require('cors');
 
 require('dotenv').config();
 
 const app = express();
+app.use((req, res, next) => {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, 	X-Requested-With, Content-Type, Accept');
+	res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, 	DELETE');
+	res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+	next();
+});
 const port = process.env.PORT | 9000;
 
 //middlewars
 app.use(express.json());
-app.use('/api', personaRoutes);
+app.use('/api', ingresoRoutes);
+app.use(bodyParser.urlencoded({extends:false}));
+app.use(bodyParser.json());
 
 //routes
 app.get('/', (req, res) => {
