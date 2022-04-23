@@ -1,8 +1,8 @@
 const express = require('express');
 const { default: mongoose } = require('mongoose');
 const bodyParser = require('body-parser')
-const personaRoutes = require("./routes/persona");
-const ingresoRoutes = require("./routes/ingreso.route.js");
+//const personaRoutes = require("src/routes/persona");
+const ingresoRoutes = require("./src/routes/ingreso.route");
 const cors = require('cors');
 
 require('dotenv').config();
