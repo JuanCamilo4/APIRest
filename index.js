@@ -1,8 +1,8 @@
 const express = require('express');
 const { default: mongoose } = require('mongoose');
 const bodyParser = require('body-parser')
-//const personaRoutes = require("src/routes/persona");
-const ingresoRoutes = require("./src/routes/ingreso.route");
+const ingresoRoutes = require("./src/routes/ingreso");
+const categoryRoutes = require("./src/routes/categoria");
 const cors = require('cors');
 
 require('dotenv').config();
@@ -19,7 +19,6 @@ const port = process.env.PORT | 9000;
 
 //middlewars
 app.use(express.json());
-app.use('/api', ingresoRoutes);
 app.use(bodyParser.urlencoded({extends:false}));
 app.use(bodyParser.json());
 
@@ -27,6 +26,8 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
     res.send('Hola mundo');
 });
+app.use('/api/ingreso', ingresoRoutes);
+app.use('/api/category', categoryRoutes);
 
 mongoose
     .connect(process.env.MONGODB_URI)

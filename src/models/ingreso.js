@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+Schema = mongoose.Schema;
 
 const ingresoSchema = mongoose.Schema({
     typePay: {
